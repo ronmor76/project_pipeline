@@ -1,14 +1,15 @@
-name: My First Action
-
-on: push  # Runs when code is pushed
-
+name: Hello
+on:
+  push:
+    branches: [ main ]
 jobs:
-  my-job:
+  my-hello-job:
     runs-on: ubuntu-latest
     steps:
+    - name: Say hello
+      run: echo "Hello dear class"
+    - name: Show data
+      run: date
+    - name: List files
+      run: ls -la
       
-      - name: Print Hello World
-        run: echo "Hello, GitHub Actions!"
-      - name: List files
-        run: ls -la
-
